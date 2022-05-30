@@ -1,6 +1,6 @@
 import {useState} from 'react'
 import {FaSignInAlt} from 'react-icons/fa'
-import {toast} from react-toastify
+import {toast} from 'react-toastify'
 
 function Login() {
 
@@ -36,7 +36,7 @@ function Login() {
     <>
     <section className="heading">
       <h1>
-        <FaSignInAlt />Login
+        <FaSignInAlt /> Login
       </h1>
       <p>Please login to get support</p>
     </section>
