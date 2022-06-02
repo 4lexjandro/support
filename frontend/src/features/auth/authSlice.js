@@ -1,4 +1,4 @@
-import {createSlice, createAsyncThunk} from '@reduxjs/toolkit'
+import {createSlice, createAsyncThunk, createAction} from '@reduxjs/toolkit'
 import authService from './authServices'
 
 const user = JSON.parse(localStorage.getItem('user'))
@@ -22,11 +22,10 @@ async(user, thunkAPI) => {
 })
 
 //Logout user
-export const logout = createAsyncThunk('auth/logout', async() => {
-
-    await authService.logout()
-
-})
+export const logout = createAction("auth/logout", () => {
+    authService.logout();
+    return {};
+  });
 
 
 export const register = createAsyncThunk(
@@ -77,7 +76,7 @@ export const authSlice = createSlice({
                 state.user = null
             })
 
-            .addCase(logout.fulfilled, (state) => {
+            .addCase(logout.type, (state) => {
                 state.user = null
             })
 
