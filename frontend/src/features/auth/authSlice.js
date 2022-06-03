@@ -65,7 +65,7 @@ export const authSlice = createSlice({
     name: 'auth',
     initialState,
     reducers: {
-        reset: (state) => {
+        reset: (state, action) => {
             state.isLoading = false
             state.isError = false
             state.isSuccess = false
