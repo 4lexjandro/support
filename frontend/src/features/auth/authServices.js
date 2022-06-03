@@ -17,7 +17,7 @@ const register = async(userData) => {
 }
 //Login user
 const login = async(userData) => {
-    const response = await axios.post(API_URL + 'login',
+    const response = await axios.post(API_URL + '/login',
         userData)
 
 
