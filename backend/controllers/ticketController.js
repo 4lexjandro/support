@@ -83,7 +83,7 @@ const createTicket = asyncHandler(async (req, res) => {
     })
 
 
-    res.status(201).json(ticket)
+    res.status(200).json(ticket)
 })
 
 
@@ -158,3 +158,4 @@ module.exports = {
     deleteTicket,
     updateTicket,
 }
+

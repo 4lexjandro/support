@@ -40,7 +40,7 @@ export const logout = createAction("auth/logout", () => {
     return {};
   });
 
-
+//Register new user
 export const register = createAsyncThunk(
     'auth/register',
     async(user, thunkAPI) => {
