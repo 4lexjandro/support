@@ -4,7 +4,7 @@ import {useEffect, useState} from 'react'
 import { toast } from 'react-toastify'
 import Modal, { setAppElement } from 'react-modal'
 import {getTicket, closeTicket} from '../features/tickets/ticketSlice'
-import {getNotes, reset as notesReset} from '../features/notes/noteSlice'
+import {getNotes, createNote, reset as notesReset} from '../features/notes/noteSlice'
 import BackButton from '../components/BackButton'
 import Spinner from '../components/Spinner'
 import NoteItem from '../components/NoteItem'
@@ -77,7 +77,7 @@ function Ticket() {
     // create note submit
     const onNoteSubmit = (e) => {
         e.preventDefault()
-        console.log('submit')
+        dispatch(createNote({noteText, ticketId}))
         closeModal()
     }
 
